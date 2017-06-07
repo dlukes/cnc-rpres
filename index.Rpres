@@ -56,7 +56,7 @@ Tables
 Code chunk echoing and split screen
 ========================================================
 
-```r
+```{r}
 # this chunk will show both input and output
 subset(mtcars, mpg > 30)
 ```
