@@ -1,0 +1,68 @@
+Presentation title
+========================================================
+author: John Doe
+date: September 3rd, 1988
+css: cnc.css
+font-family: 'Arial', sans-serif
+autosize: true
+width: 1920
+height: 1080
+
+```{r include=FALSE}
+opts_chunk$set(fig.width=8, fig.height=6, out.width=1200, out.height=900, dpi=300)
+```
+
+First slide fields
+========================================================
+
+- `css` is the path to the CSS file which overrides the presentation styles to
+  bring it in line with the CNC visual style
+- `font-family` should be set to a diacritic-safe font if you plan to use
+  those, otherwise it can be omitted and a prettier default font will be used
+  with which you might however experience glyph substitution
+- `autosize` vs. `width` and `height`: these settings affect how much screen
+  real estate the presentation content is allowed to take up. You can either
+  let the presentation adapt to the screen size (which is handy but might lead
+  to some unexpected results with graphics) or target a particular aspect ratio
+  / screen size.
+ 
+Graphics setup
+========================================================
+
+- if you'll be using a single figure size throughout the presentation, it makes
+  sense to change the chunk defaults once at the beginning with
+  `opts_chunk$set()` instead of repeating the settings in per-chunk options
+- general recommendations:
+  1. keep `fig.{width,height}` relatively small (units of inches), so that font
+     size remains large enough w.r.t. the plot (when increasing the size of the
+     plot, font size isn't automatically scaled)
+  2. set `out.{width,height}` to the actual display size you want to have in
+     your presentation (in pixels); these values should take into account the
+     overall size of the presentation canvas set by `width` and `height`, and
+     obviously, they should keep the same aspect ratio as `fig.{width,height}`,
+     otherwise your graphics will look stretched
+  3. since you'll be stretching the original `fig.{width,height}` to
+     `out.{width,height}` to display the figure, you should increase the `dpi`,
+     otherwise the figure will look blurry
+
+Tables
+========================================================
+
+| This | is | a | header |
+|------|----|---|--------|
+| This | is | a | row    |
+
+Code chunk echoing and split screen
+========================================================
+
+```r
+# this chunk will show both input and output
+subset(mtcars, mpg > 30)
+```
+
+---
+
+```{r echo=FALSE}
+# this chunk will only show output
+subset(mtcars, mpg < 15)
+```
