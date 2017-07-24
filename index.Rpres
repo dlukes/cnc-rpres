@@ -12,6 +12,9 @@ height: 1080
 opts_chunk$set(fig.width=8, fig.height=6, out.width=1200, out.height=900, dpi=300)
 ```
 
+The default size for R presentations is a width of 960 pixels and a height of 700
+pixels.
+
 First slide fields
 ========================================================
 
