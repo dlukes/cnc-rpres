@@ -1,0 +1,169 @@
+---
+title: Presentation title
+author: John Doe
+date: September 3rd, 1988
+output:
+  revealjs::revealjs_presentation:
+    css: cnc.css
+    highlight: pygments
+    center: false
+    incremental: false
+    transition: convex
+    reveal_options:
+      width: 1920
+      height: 1080
+      # width: 960
+      # height: 700
+---
+
+```{r include=FALSE}
+library(tidyverse)
+# NOTE: for a faster edit-preview cycle when authoring your presentation, you
+# might want to temporarily disable these options altogether
+knitr::opts_chunk$set(fig.width=8, fig.height=6, out.width=1200, out.height=900, dpi=300)
+# knitr::opts_chunk$set(fig.width=8, fig.height=6, out.width=720, out.height=540, dpi=300)
+```
+
+<!------------------------ BEGIN PRESENTATION CONTENT ------------------------>
+
+The default layout of this presentation is widescreen, higher resolution.
+Toggle the commented `*width` and `*height` options above to achieve a more
+traditional, "square" presentation layout. More information about the options
+for reveal.js R Markdown presentations can be found at
+<http://rmarkdown.rstudio.com/revealjs_presentation_format.html>.
+
+> - first-level headings (`=== / #`) are just section titles, they can't have
+    content and can be navigated through horizontally
+> - second-level headings (`--- / ##`) are titles for content slides nested
+    within the individual sections; these can be navigated through vertically
+    within each section
+> - if the above doesn't make much sense, press `Esc` to see an overview of the
+    presentation which hopefully will
+
+Introduction
+===============================================================================
+
+YAML header config
+-------------------------------------------------------------------------------
+
+- `css` is the path to the CSS file which overrides the presentation styles to
+  bring them in line with the CNC visual style
+- `width` and `height`: these settings affect how much screen real estate the
+  presentation content is allowed to take up.
+
+Graphics setup
+-------------------------------------------------------------------------------
+
+- if you'll be using a single figure size throughout the presentation, it makes
+  sense to change the chunk defaults once at the beginning with
+  `opts_chunk$set()` instead of repeating the settings in per-chunk options
+- general recommendations:
+  1. keep `fig.{width,height}` relatively small (units of inches), so that font
+     size remains large enough w.r.t. the plot (when increasing the size of the
+     plot, font size isn't automatically scaled)
+  2. set `out.{width,height}` to the actual display size you want to have in
+     your presentation (in pixels); these values should take into account the
+     overall size of the presentation canvas set by `width` and `height`, and
+     obviously, they should keep the same aspect ratio as `fig.{width,height}`,
+     otherwise your graphics will look stretched
+  3. since you'll be stretching the original `fig.{width,height}` to
+     `out.{width,height}` to display the figure, you should increase the `dpi`,
+     otherwise the figure will look blurry
+
+A *centered* figure
+-------------------------------------------------------------------------------
+
+<div class="centered">
+```{r echo=FALSE}
+qplot(1:10, 1:10)
+```
+</div>
+
+Results
+===============================================================================
+
+Tables
+-------------------------------------------------------------------------------
+
+| This | is | a | header |
+|------|----|---|--------|
+| This | is | a | row    |
+
+Code chunk echoing and two-column layouts
+-------------------------------------------------------------------------------
+
+<div class="container">
+
+<div class="col">
+```{r}
+# this chunk will show both input and output
+subset(mtcars, mpg > 30)
+```
+</div>
+
+<div class="col">
+```{r echo=FALSE}
+# this chunk will only show output
+subset(mtcars, mpg < 15)
+```
+</div>
+
+</div>
+
+Or three-column for all I care...
+-------------------------------------------------------------------------------
+
+<div class="container">
+
+<div class="col">
+```{r echo=FALSE}
+subset(mtcars, mpg < 10)
+```
+</div>
+
+<div class="col">
+```{r echo=FALSE}
+subset(mtcars, mpg >= 10 & mpg < 20)
+```
+</div>
+
+<div class="col">
+```{r echo=FALSE}
+subset(mtcars, mpg > 20)
+```
+</div>
+
+</div>
+
+Centering
+-------------------------------------------------------------------------------
+
+Non-centered.
+
+<div class="centered">
+Centered.
+
+Even multiple paragraphs.
+</div>
+
+Non-centered again.
+
+<!------------------------- END PRESENTATION CONTENT ------------------------->
+
+<script>
+// this snippet ensures different styling for title slides
+window.addEventListener("load", function() {
+  var body = document.body;
+  function tagBody(e) {
+    if (!e.currentSlide.classList.contains("level2")) {
+      body.classList.add("section-title");
+    } else {
+      body.classList.remove("section-title");
+    }
+  };
+  var p = document.querySelectorAll("section.present");
+  var e = { currentSlide: p[p.length - 1] };
+  tagBody(e);
+  Reveal.addEventListener("slidechanged", tagBody);
+});
+</script>
