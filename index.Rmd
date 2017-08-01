@@ -4,16 +4,20 @@ author: John Doe
 date: September 3rd, 1988
 output:
   revealjs::revealjs_presentation:
+    self_contained: false
     css: cnc.css
     highlight: pygments
     center: false
-    incremental: false
-    transition: convex
+    # incremental: true
+    # transition: slide
+    reveal_plugins: ["search", "notes", "chalkboard"]
     reveal_options:
       width: 1920
       height: 1080
       # width: 960
       # height: 700
+      chalkboard:
+        theme: whiteboard
 ---
 
 ```{r include=FALSE}
@@ -31,6 +35,14 @@ Toggle the commented `*width` and `*height` options above to achieve a more
 traditional, "square" presentation layout. More information about the options
 for reveal.js R Markdown presentations can be found at
 <http://rmarkdown.rstudio.com/revealjs_presentation_format.html>.
+
+Some revealjs plugins are included in the YAML header at the top just to give
+an idea of how they should be used and what's available. Feel free to remove
+any/all of them.
+
+If you don't use any plugins, you can set `self_contained: true` in the YAML
+header, which will allow you to just open the file with the presentation
+locally, without having to run a server.
 
 > - first-level headings (`=== / #`) are just section titles, they can't have
     content and can be navigated through horizontally
@@ -147,6 +159,32 @@ Even multiple paragraphs.
 </div>
 
 Non-centered again.
+
+Revealjs plugins
+===============================================================================
+
+Search
+-------------------------------------------------------------------------------
+
+The `search` plugin puts a search box in the upper left corner of the
+screen which lets you quickly jump through textual matches to a query in your
+presentation.
+
+Notes
+-------------------------------------------------------------------------------
+
+The `notes` plugin adds a speaker notes view with timer and more goodies. It
+opens in a separate browser window if you press the `S` key.
+
+Chalkboard
+-------------------------------------------------------------------------------
+
+The `chalkboard` plugin lets you doodle either directly over your slide or on
+an empty fresh virtual chalkboard. Use the buttons in the lower left corner or
+the `C` and `B` keys to activate either of these options.
+
+Note that this plugin doesn't seem to play well with the `search` plugin,
+because it overlays the slide and thus makes the search box inaccessible.
 
 <!------------------------- END PRESENTATION CONTENT ------------------------->
 
