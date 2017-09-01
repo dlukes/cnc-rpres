@@ -93,6 +93,49 @@ qplot(1:10, 1:10)
 ```
 </div>
 
+Recommended deployment
+-------------------------------------------------------------------------------
+
+To generate the presentation, press the *Knit* button in RStudio. (You could
+also knit it manually with `knitr::knit("index.Rmd")`, but that only generates
+`index.md`. In order to get the HTML, you have to run a fairly complex pandoc
+command. If you're curious, inspect the output in the *R Markdown* tab after
+pressing the *Knit* button.)
+
+Some plugins (e.g. speaker notes) require that the presentation be served over
+an HTTP connection. The recommended way to deploy it is therefore to drop **this
+entire directory** into your `~/public_html` directory on a publicly accessible
+server.
+
+If you will be serving the presentation locally from your PC / laptop, the
+easiest way to do so is probably from RStudio itself (just press *Knit* and it
+will open). Alternatively, you can run a web server in this directory:
+
+```sh
+# depending on what you have installed
+$ python2 -m SimpleHTTPServer
+# or
+$ python3 -m http.server
+# or
+$ php -S localhost:8000
+```
+
+You can then open the presentation by visiting <http://localhost:8000> in your
+browser.
+
+Single-file presentation
+-------------------------------------------------------------------------------
+
+A single-file version of the presentation, which can be easily opened locally
+in a web browser without being served over HTTP (just by double-clicking the
+file, on most systems), can be created by setting the `self_contained` option
+in the YAML header to `true`. This makes it easier to share the presentation
+with non-technical people over e-mail (if they need their own offline copy for
+some reason; if not, just sharing a link to a version hosted online, as
+explained previously, is much better). As mentioned on the previous slide
+though, be aware that *some functionality* (e.g. speaker notes) *might become
+unavailable.*
+
 Results
 ===============================================================================
 
