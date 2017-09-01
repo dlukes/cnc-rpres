@@ -7,7 +7,7 @@ output:
   revealjs::revealjs_presentation:
     self_contained: false
     template: pandoc_template.html
-    css: cnc.css
+    css: ff-uk.css
     highlight: pygments
     center: false
     # incremental: true
