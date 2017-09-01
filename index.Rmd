@@ -176,12 +176,24 @@ Notes
 The `notes` plugin adds a speaker notes view with timer and more goodies. It
 opens in a separate browser window if you press the `S` key.
 
+And this is how you create notes:
+
+<aside class="notes">
+### My fancy speaker notes
+
+**WARNING**: Don't put level 1 and 2 Markdown headings in here because they will
+be interpreted as slide delimiters!
+</aside>
+
 Chalkboard
 -------------------------------------------------------------------------------
 
 The `chalkboard` plugin lets you doodle either directly over your slide or on
 an empty fresh virtual chalkboard. Use the buttons in the lower left corner or
 the `C` and `B` keys to activate either of these options.
+
+`Delete` clears the chalkboard. `Backspace` deletes all drawings on the current
+slide. `D` downloads chalkboard drawings as JSON.
 
 Note that this plugin doesn't seem to play well with the `search` plugin,
 because it overlays the slide and thus makes the search box inaccessible.
