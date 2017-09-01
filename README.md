@@ -1,13 +1,14 @@
-Czech National Corpus R Presentation template
-=============================================
+Faculty of Arts, Charles University, Prague R Presentation template
+===================================================================
 
 Overview
 --------
 
 A template for HTML presentations using [R Markdown][rmd] and [revealjs][rvl],
-adapted for the visual style of the Czech National Corpus project, along with
-helpful hints on how to make your presentation look its best. Just clone the
-repository and open `index.Rmd` in [RStudio][rst] to get started.
+adapted for the visual style of the Faculty of Arts, Charles University,
+Prague, along with helpful hints on how to make your presentation look its
+best. Just clone the repository and open `index.Rmd` in [RStudio][rst] to get
+started.
 
 [Here's][rmd-rvl] a list of tips on how to use and customize the revealjs
 output option in R Markdown.
