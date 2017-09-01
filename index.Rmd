@@ -30,6 +30,8 @@ knitr::opts_chunk$set(fig.width=8, fig.height=6, out.width=1200, out.height=900,
 
 <!------------------------ BEGIN PRESENTATION CONTENT ------------------------>
 
+**Press `F` to go fullscreen.**
+
 The default layout of this presentation is *widescreen*, **higher resolution**.
 Toggle the commented `width` and `height` options above to achieve a more
 traditional, "square" presentation layout. More information about the options
