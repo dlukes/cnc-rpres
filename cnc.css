@@ -1,8 +1,5 @@
-/* magenta: #e2007a
-   cyan: #009ee0
-   green: #57ab27, #8ade5a
-   orange: #ea670c, #ff9a3f
-*/
+/* FF UK palette: http://paletton.com/palette.php?uid=55z0u0kp9rufvAGkytWsjmwvUhI
+ * FF UK red: rgb(210, 45, 64) / #d22d40 */
 
 @import url("fonts.css");
 
@@ -13,7 +10,7 @@
 }
 
 .reveal .progress span {
-  background: #57ab27;
+  background: #d22d40;
 }
 
 /* NAVIGATION CONTROLS */
@@ -39,42 +36,42 @@
 }
 
 .reveal .controls button.navigate-left.enabled {
-  border-right-color: #ea670c;
+  border-right-color: #d22d40;
   opacity: 1;
 }
 
 .reveal .controls button.navigate-right.enabled {
-  border-left-color: #ea670c;
+  border-left-color: #d22d40;
   opacity: 1;
 }
 
 .reveal .controls button.navigate-up.enabled {
-  border-bottom-color: #ea670c;
+  border-bottom-color: #d22d40;
   opacity: 1;
 }
 
 .reveal .controls button.navigate-down.enabled {
-  border-top-color: #ea670c;
+  border-top-color: #d22d40;
   opacity: 1;
 }
 
 .reveal .controls button.navigate-left.enabled:hover {
-  border-right-color: #ff9a3f;
+  border-right-color: #e55263;
   opacity: 0.7;
 }
 
 .reveal .controls button.navigate-right.enabled:hover {
-  border-left-color: #ff9a3f;
+  border-left-color: #e55263;
   opacity: 0.7;
 }
 
 .reveal .controls button.navigate-up.enabled:hover {
-  border-bottom-color: #ff9a3f;
+  border-bottom-color: #e55263;
   opacity: 0.7;
 }
 
 .reveal .controls button.navigate-down.enabled:hover {
-  border-top-color: #ff9a3f;
+  border-top-color: #e55263;
   opacity: 0.7;
 }
 
@@ -84,24 +81,24 @@ body {
   transition: background 800ms ease;
   background-image: url(logo-content.png);
   background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 30%;
+  background-position: center center;
+  background-size: 50%;
 }
 
 /* TEXT HIGHLIGHTING */
 
 .reveal strong {
-  color: #e2007a;
+  color: #a7247c;
 }
 
 .reveal em {
-  color: #009ee0;
+  color: #db742f;
 }
 
 /* LINKS */
 
 .reveal a:not(.image) {
-  color: #57ab27;
+  color: #d22d40;
   text-decoration: underline;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -111,7 +108,7 @@ body {
 }
 
 .reveal a:not(.image):hover {
-  color: #8ade5a;
+  color: #f67f8d;
   text-shadow: none;
   border: none;
 }
