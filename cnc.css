@@ -4,6 +4,8 @@
    orange: #ea670c, #ff9a3f
 */
 
+@import url("fonts.css");
+
 /* PROGRESS BAR */
 
 .reveal .progress {
@@ -131,9 +133,17 @@ body.section-title {
 
 /* TEXT RENDERING */
 
+.reveal .slides section {
+  font-family: LatoWeb, Arial, sans-serif;
+}
+
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  font-family: Arial, sans-serif;
+  font-family: LatoWeb, Arial, sans-serif;
   hyphens: none;
+}
+
+.reveal .slides p {
+  text-align: left;
 }
 
 .section-title .reveal h1,
@@ -144,11 +154,6 @@ body.section-title {
 .section-title .reveal h6,
 .section-title .reveal p {
   color: white;
-}
-
-.reveal p {
-  font-family: Arial, sans-serif;
-  text-align: left;
 }
 
 /* MULTI-COLUMN LAYOUTS */
