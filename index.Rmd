@@ -6,6 +6,8 @@ output:
   revealjs::revealjs_presentation:
     self_contained: false
     css: cnc.css
+    include:
+      in_header: in_header.html
     highlight: pygments
     center: false
     # incremental: true
@@ -244,21 +246,3 @@ Note that this plugin doesn't seem to play well with the `search` plugin,
 because it overlays the slide and thus makes the search box inaccessible.
 
 <!------------------------- END PRESENTATION CONTENT ------------------------->
-
-<script>
-// this snippet ensures different styling for title slides
-window.addEventListener("load", function() {
-  var body = document.body;
-  function tagBody(e) {
-    if (!e.currentSlide.classList.contains("level2")) {
-      body.classList.add("section-title");
-    } else {
-      body.classList.remove("section-title");
-    }
-  };
-  var p = document.querySelectorAll("section.present");
-  var e = { currentSlide: p[p.length - 1] };
-  tagBody(e);
-  Reveal.addEventListener("slidechanged", tagBody);
-});
-</script>
