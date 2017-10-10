@@ -4,6 +4,7 @@ window.addEventListener("load", function() {
   var body = document.body;
   function tagBody(e) {
     if (!e.currentSlide.classList.contains("level2")) {
+      // this class identifies title (= not level2) slides
       body.classList.add("section-title");
     } else {
       body.classList.remove("section-title");
