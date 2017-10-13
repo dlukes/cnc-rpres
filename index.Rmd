@@ -1,18 +1,18 @@
 ---
-title: Presentation title
-author: John Doe
+title: "Presentation title:"
+subtitle: A tongue-in-cheek subtitle
+author: [John Doe, Jane Doe]
 date: September 3rd, 1988
 output:
   revealjs::revealjs_presentation:
     self_contained: false
+    template: pandoc_template.html
     css: cnc.css
-    include:
-      in_header: in_header.html
     highlight: pygments
     center: false
     # incremental: true
     # transition: slide
-    reveal_plugins: ["search", "notes", "chalkboard"]
+    reveal_plugins: [search, notes, chalkboard]
     reveal_options:
       width: 1920
       height: 1080
@@ -31,6 +31,31 @@ knitr::opts_chunk$set(fig.width=8, fig.height=6, out.width=1200, out.height=900,
 ```
 
 <!------------------------ BEGIN PRESENTATION CONTENT ------------------------>
+
+**NB:** In order to automatically apply a special title slide style while
+retaining PDF export functionality, this template ships with its own reveal.js
+pandoc template in `pandoc_template.html`. If the presentation seems broken, it
+may be because the [revealjs_presentation](https://github.com/rstudio/revealjs)
+RMarkdown exporter has switched to a newer version of reveal.js in the
+meantime. If that is the case, make sure you have this new version of the
+template:
+
+<https://github.com/rstudio/revealjs/blob/master/inst/rmarkdown/templates/revealjs_presentation/resources/default.html>
+
+And tweak it in the same way as the original `pandoc_template.html` by adding
+the snippet between the following pair of comments at the appropriate place:
+
+```html
+<!-- begin pandoc template customization -->
+...
+<!-- end pandoc template customization -->
+```
+
+Introduction
+===============================================================================
+
+General
+-------------------------------------------------------------------------------
 
 **Press `F` to go fullscreen.**
 
@@ -55,9 +80,6 @@ locally, without having to run a server.
     within each section
 > - if the above doesn't make much sense, press `Esc` to see an overview of the
     presentation which hopefully will
-
-Introduction
-===============================================================================
 
 YAML header config
 -------------------------------------------------------------------------------
@@ -98,11 +120,8 @@ qplot(1:10, 1:10)
 Recommended deployment
 -------------------------------------------------------------------------------
 
-To generate the presentation, press the *Knit* button in RStudio. (You could
-also knit it manually with `knitr::knit("index.Rmd")`, but that only generates
-`index.md`. In order to get the HTML, you have to run a fairly complex pandoc
-command. If you're curious, inspect the output in the *R Markdown* tab after
-pressing the *Knit* button.)
+To generate the presentation, press the *Knit* button in RStudio or run
+`rmarkdown::render("index.Rmd")` from an R prompt.
 
 Some plugins (e.g. speaker notes) require that the presentation be served over
 an HTTP connection. The recommended way to deploy it is therefore to drop **this
@@ -128,15 +147,21 @@ browser.
 Single-file presentation
 -------------------------------------------------------------------------------
 
-A single-file version of the presentation, which can be easily opened locally
-in a web browser without being served over HTTP (just by double-clicking the
-file, on most systems), can be created by setting the `self_contained` option
-in the YAML header to `true`. This makes it easier to share the presentation
-with non-technical people over e-mail (if they need their own offline copy for
-some reason; if not, just sharing a link to a version hosted online, as
-explained previously, is much better). As mentioned on the previous slide
-though, be aware that *some functionality* (e.g. speaker notes) *might become
-unavailable.*
+**Don't do this.** Seriously. For viewing in the browser, use the [recommended
+deployment](#recommended-deployment) method. For offline distribution, [export
+to PDF](#exporting-to-pdf).
+
+<small>
+
+If you truly must, a single-file HTML version of the presentation, which can be
+opened locally in a web browser without being served over HTTP (just by
+double-clicking the file, on most systems), can be created by setting the
+`self_contained` option in the YAML header to `true`. As mentioned on the
+previous slide though, be aware that *some functionality* (e.g. speaker notes)
+*might become unavailable*, and you may still need to *distribute external
+resources* (such as images) along with the HTML file.
+
+</small>
 
 Results
 ===============================================================================
@@ -244,5 +269,49 @@ slide. `D` downloads chalkboard drawings as JSON.
 
 Note that this plugin doesn't seem to play well with the `search` plugin,
 because it overlays the slide and thus makes the search box inaccessible.
+
+Conclusion
+===============================================================================
+
+Customizing individual slides {data-background="#000" data-background-iframe="https://youtube.com/embed/j3rwKl267gE?autoplay=1&controls=0&showinfo=0&autohide=1"}
+-------------------------------------------------------------------------------
+
+It's possible to customize backgrounds, transitions and other settings per
+slide. See above for an example, and for more information, search for `{data-`
+on [revealjs_presentation's website](https://github.com/rstudio/revealjs), or
+for `data-` on [reveal.js's website](https://github.com/hakimel/reveal.js).
+
+Characters with diacritics
+-------------------------------------------------------------------------------
+
+[Lato fonts](http://www.latofonts.com/) with full character sets are embedded,
+so go nuts!
+
+| Běžela Magda kaňonem,
+| srážela banány rádiem.
+
+Exporting to PDF
+-------------------------------------------------------------------------------
+
+1. Using Chrome/Chromium:¹ open the presentation with a `?print-pdf` or
+   `?print-pdf&showNotes=true` query string, then print using the normal
+   print dialog, adjusting settings for destination (*Save as PDF*),
+   orientation, margins, background graphics etc. as necessary.
+2. Use the [decktape](https://github.com/astefanutti/decktape) command line
+   tool.
+
+For more details on both methods, see
+[reveal.js's GitHub](https://github.com/hakimel/reveal.js/#pdf-export).
+
+<small>
+
+¹ Or possibly any other browser, I think the primary reason for using Chrome or
+Chromium is that it's relatively easy to alter the settings for a nice printout
+without borders etc.
+
+</small>
+
+Thank you for your attention!
+===============================================================================
 
 <!------------------------- END PRESENTATION CONTENT ------------------------->
