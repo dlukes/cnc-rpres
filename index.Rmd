@@ -173,6 +173,13 @@ Tables
 |------|----|---|--------|
 | This | is | a | row    |
 
+Pretty-printing data frames with knitr::kable()
+-------------------------------------------------------------------------------
+
+```{r echo=FALSE, results="asis"}
+knitr::kable(mtcars[1:5, ], caption="A knitr kable.")
+```
+
 Code chunk echoing and two-column layouts
 -------------------------------------------------------------------------------
 
