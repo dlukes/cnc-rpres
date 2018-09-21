@@ -57,7 +57,7 @@ Introduction
 General
 -------------------------------------------------------------------------------
 
-**Press `F` to go fullscreen.**
+**Press `F` to go fullscreen, `?` to show all shortcuts.**
 
 The default layout of this presentation is *widescreen*, **higher resolution**.
 Toggle the commented `width` and `height` options above to achieve a more
@@ -177,7 +177,7 @@ Pretty-printing data frames with knitr::kable()
 -------------------------------------------------------------------------------
 
 ```{r echo=FALSE, results="asis"}
-knitr::kable(mtcars[1:5, ], caption="A knitr kable.")
+knitr::kable(mtcars[1:5, ], caption="A knitr kable.", digits=2)
 ```
 
 Code chunk echoing and two-column layouts
