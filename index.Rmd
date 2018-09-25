@@ -28,6 +28,9 @@ library(tidyverse)
 # might want to temporarily disable these options altogether
 knitr::opts_chunk$set(fig.width=8, fig.height=6, out.width=1200, out.height=900, dpi=300)
 # knitr::opts_chunk$set(fig.width=8, fig.height=6, out.width=720, out.height=540, dpi=300)
+# use cache for faster recompilation (you might need to clear the cache for
+# figures to update); cf. https://yihui.name/knitr/options/#cache
+knitr::opts_chunk$set(cache=TRUE)
 ```
 
 <!------------------------ BEGIN PRESENTATION CONTENT ------------------------>
