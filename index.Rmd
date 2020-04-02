@@ -13,11 +13,17 @@ output:
     # incremental: true
     # transition: slide
     reveal_plugins: [search, notes, chalkboard]
+    # The full list of configuration options is available here:
+    # https://github.com/hakimel/reveal.js/#configuration
+    # Which of those work depends on your version of reveal.js and your
+    # pandoc_template.html, which must explicitly pass them on to
+    # Reveal.initialize.
     reveal_options:
       width: 1920
       height: 1080
       # width: 960
       # height: 700
+      slideNumber: true
       chalkboard:
         theme: whiteboard
 ---

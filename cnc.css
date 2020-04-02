@@ -6,7 +6,7 @@
 
 @import url("fonts.css");
 
-/* PROGRESS BAR */
+/* ------------------------------------------------------------- PROGRESS BAR */
 
 .reveal .progress {
   top: 0;
@@ -16,7 +16,7 @@
   background: #57ab27;
 }
 
-/* NAVIGATION CONTROLS */
+/* ------------------------------------------------------ NAVIGATION CONTROLS */
 
 .reveal .controls button.navigate-left {
   border-right-color: #ccc;
@@ -78,7 +78,7 @@
   opacity: 0.7;
 }
 
-/* SLIDE BACKGROUNDS */
+/* -------------------------------------------------------- SLIDE BACKGROUNDS */
 
 body {
   transition: background 800ms ease;
@@ -88,7 +88,7 @@ body {
   background-size: 30%;
 }
 
-/* TEXT HIGHLIGHTING */
+/* -------------------------------------------------------- TEXT HIGHLIGHTING */
 
 .reveal strong {
   color: #e2007a;
@@ -98,7 +98,7 @@ body {
   color: #009ee0;
 }
 
-/* LINKS */
+/* -------------------------------------------------------------------- LINKS */
 
 .reveal a:not(.image) {
   color: #57ab27;
@@ -116,13 +116,13 @@ body {
   border: none;
 }
 
-/* IMAGES */
+/* ------------------------------------------------------------------- IMAGES */
 
 .reveal section img {
   border: none;
 }
 
-/* TEXT RENDERING */
+/* ----------------------------------------------------------- TEXT RENDERING */
 
 .reveal .slides section {
   font-family: LatoWeb, Arial, sans-serif;
@@ -152,7 +152,7 @@ body {
   color: white;
 }
 
-/* MULTI-COLUMN LAYOUTS */
+/* ----------------------------------------------------- MULTI-COLUMN LAYOUTS */
 
 .container {
     display: flex;
@@ -165,7 +165,7 @@ body {
     min-width: 0;
 }
 
-/* CENTERING */
+/* ---------------------------------------------------------------- CENTERING */
 
 .centered {
   display: flex;
@@ -174,7 +174,7 @@ body {
   justify-content: center;
 }
 
-/* TABLE STYLING */
+/* ------------------------------------------------------------ TABLE STYLING */
 
 .reveal table {
   border-width: 0;
@@ -196,4 +196,12 @@ body {
 
 .reveal table tbody tr:hover {
   background-color: rgb(236, 238, 239);
+}
+
+/* ------------------------------------------------------------ SLIDE NUMBERS */
+
+.reveal .slide-number {
+  font-size: 2rem;
+  top: 8px;
+  bottom: unset;
 }
